@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package wallet;
+
+
+service WalletService {
+    rpc CreateWallet(CreateWalletRequest) returns (CreateWalletResponse)
+}
+
+message CreateWalletRequest {
+    string userId = 1;
+    string currency = 2;
+}
+
+message CreateWalletResponse {
+    string walletId = 1;
+    string userId = 2;
+    string currency = 3;
+    double balance = 4;
+    bool isActive = 5;
+    string createdAt = 6;
+}
